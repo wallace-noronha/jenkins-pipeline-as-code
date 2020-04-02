@@ -1,7 +1,5 @@
 def call(body){
 
-    def message = "Hello World!"
-
     pipeline {
         agent any
 
@@ -16,9 +14,9 @@ def call(body){
                     echo 'Testing..'
                 }
             }
-            stage('Print Message') {
+            stage('Package') {
                 steps {
-                    echo message
+                    echo 'Package..'
                 }
             }
             stage('Deploy') {
