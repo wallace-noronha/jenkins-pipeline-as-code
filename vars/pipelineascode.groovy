@@ -1,20 +1,30 @@
-pipeline {
-    agent any
+def call(){
 
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
+    def message = "Hello World!"
+
+    pipeline {
+        agent any
+
+        stages {
+            stage('Build') {
+                steps {
+                    echo 'Building..'
+                }
             }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
+            stage('Test') {
+                steps {
+                    echo 'Testing..'
+                }
             }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+            stage('Print Message') {
+                steps {
+                    echo message
+                }
+            }
+            stage('Deploy') {
+                steps {
+                    echo 'Deploying....'
+                }
             }
         }
     }
